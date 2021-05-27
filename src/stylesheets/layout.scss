@@ -6,4 +6,7 @@
     font-size: 1.5rem;
     font-family: 'Inter', sans-serif;
     padding-left: 2rem; 
+    &:focus{
+        outline: none;
+    }
 }

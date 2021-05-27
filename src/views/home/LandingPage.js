@@ -1,8 +1,10 @@
 import './styles.scss'
 import heroImg from '../../images/screen1.png'
 import mask from '../../images/mask.png'
+import mask2 from '../../images/mask2.png'
 import swirlBg from '../../images/bg.png'
 import screen2 from '../../images/screen2.png'
+import cardScreen2 from '../../images/cardScreen2.png'
 import playstore from '../../images/google-play.png'
 import appstore from '../../images/apple-store.png'
 import logo from '../../images/Qwid.png'
@@ -10,8 +12,30 @@ import netflix from '../../images/netflix.svg'
 import xbox from '../../images/xbox.svg'
 import playstation from '../../images/playstation.svg'
 import screen3 from '../../images/cardScreen.png'
+import Footer from '../footer/Footer'
+import { useRef, useState } from 'react'
 
 const LandingPage = () => {
+
+    const formRef = useRef(null)
+
+    const slideToForm = () =>{
+        formRef.current.scrollIntoView()
+    }
+
+    const [email,setEmail] = useState('')
+
+    const onChangeHandler = (e) =>{
+        setEmail(e.target.value)
+    }
+
+    //this handles the submission of the email
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        console.log('submitted')
+    }
+
+    console.log(email)
     return ( 
         <div>
             <section className='hero txt-center'>
@@ -21,7 +45,7 @@ const LandingPage = () => {
                     <p className='summary-1'>Send money to your friends, make payments online & go cashless.</p>
                     <p className='summary-1'>welcome to the future.<span></span></p>
                 </div>
-                <button className='hero-btn btn-pry mt-2' >Join the waitlist</button>
+                <button className='hero-btn btn-pry mt-2' onClick={slideToForm}>Join the waitlist</button>
                 <div className='hero-img'>
                      <img src={heroImg} alt='quid screen' />
                      <img src={mask} alt='mask' className="mask" />
@@ -45,8 +69,10 @@ const LandingPage = () => {
                      <img src={screen3} alt="screen" className="screen" />
                      <img src={netflix} alt="netflix" className="netflix e-card" />
                      <img src={xbox} alt="xbox" className="xbox e-card" />
-                     <img src={playstation} alt="playstation" className="playstation e-card" />   
+                     <img src={playstation} alt="playstation" className="playstation e-card" />
+                     <img src={mask2} alt='mask' className="mask-two" />   
                 </div>
+                <img src={cardScreen2} alt="screen" className="cardScreen" />
             </section>
 
             <section className='waitlist txt-center'>
@@ -59,12 +85,13 @@ const LandingPage = () => {
                     <div className="left">
                         <h2 className='title-2'>Join <br/>our <br/>waitlist!</h2>
                     </div>
-                    <div className="right">
-                        <input className='input-field-1' placeholder='your mail'/>
+                    <form className="right" ref={formRef} onSubmit={handleSubmit}>
+                        <input className='input-field-1' placeholder='your mail' value={email} onChange={onChangeHandler}/>
                         <button className='btn-pry-b mt-2'>Join the waitlist</button>
-                    </div>
+                    </form>
                 </div>
              </section>
+             <Footer />
         </div> 
         );
 }

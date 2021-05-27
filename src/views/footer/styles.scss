@@ -1,0 +1,20 @@
+.footer{
+    height: 28rem;
+    width: 100%;
+    padding: 12rem 0;
+    p{
+        text-align: center;
+        margin-bottom: 2.5rem;
+        font-size: 2rem;
+        font-family: 'Inter', sans-serif;
+        color: rgba(0, 0, 0, 0.62)
+    }
+    &-icons{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    .icon:not(:nth-child(3)){
+        margin-right: 3rem;
+    }
+}

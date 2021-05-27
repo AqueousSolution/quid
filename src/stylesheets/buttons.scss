@@ -6,14 +6,23 @@
     color: white;
     border: none;
     border-radius: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    &:hover{
+        background: #6991f8
+    }
 }
+
 
 .btn-pry{
     width: 23.19rem;
     height: 5.63rem;
     font-size: 2rem;
-    @include pry
+    @include pry;
+    
+   
 }
+
 
 .btn-pry-b{
     width: 36.56rem;

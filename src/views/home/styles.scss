@@ -66,21 +66,36 @@
         position: relative;
         margin-top: 14rem;
         justify-content: center;
+        .e-card{
+            margin-right: 1rem
+        }
         .screen{
             @include abs-middle;
             z-index: -1;
             top: -10rem;
+        }
+        .cardScreen{
+            @include abs-middle;
+            bottom: -1rem;
+        }
+        .mask-two{
+            @include abs-middle;
+            z-index: -1;
+            bottom: -14.5rem;
         }
       
     }
 }
 
 .waitlist{
-    margin-top: 17rem;
+    margin-top: 11rem;
     &-links{
         display: flex;
         justify-content: center;
         margin-top: 3rem;   
+        .playstore{
+            margin-right: 1.5rem;
+        }
     }
     &-form{
         margin-top: 6.5rem;
